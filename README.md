@@ -11,29 +11,29 @@ This leads us into the central question we'll be investigating: "how well do the
 ### Dataset Introduction
 In our project, we are going to be working with Oracle Elixir's League of Legends professional match's history throughout 2022. This datatset consists of 150,588 rows alongside 161 columns. Of those columns, some of them are important metrics defining the key gameplay variables recorded from each match that would help go more in depth in answering our question and predictive analysis.
 
--firsttower: A binary flag indicating whether the team secured the first tower of the match (1 if they did, 0 if not).
+- firsttower: A binary flag indicating whether the team secured the first tower of the match (1 if they did, 0 if not).
 
--goldat10: The total gold a team has accumulated by the 10-minute mark.
+- goldat10: The total gold a team has accumulated by the 10-minute mark.
 
--xpat10: The total experience points (XP) earned by a team at the 10-minute mark.
+- xpat10: The total experience points (XP) earned by a team at the 10-minute mark.
 
--csat10: The cumulative number of minions killed by a team in lane by the 10-minute mark.
+- csat10: The cumulative number of minions killed by a team in lane by the 10-minute mark.
 
--killsat10: The total number of enemy champions that a team has slain by the 10-minute mark.
+- killsat10: The total number of enemy champions that a team has slain by the 10-minute mark.
 
--assistsat10: The total number of assists contributed by the team toward enemy champion kills at the 10-minute mark.
+- assistsat10: The total number of assists contributed by the team toward enemy champion kills at the 10-minute mark.
 
--deathsat10: The total number of times team members have died by the 10-minute mark.
+- deathsat10: The total number of times team members have died by the 10-minute mark.
 
--towers: The overall number of towers destroyed by the team throughout the match.
+- towers: The overall number of towers destroyed by the team throughout the match.
 
--monsterkills: The aggregate count of neutral monsters killed by the team during the match.
+- monsterkills: The aggregate count of neutral monsters killed by the team during the match.
 
--visionscore: A metric reflecting how effectively the team maintained vision control across the map.
+- visionscore: A metric reflecting how effectively the team maintained vision control across the map.
 
--goldspent: The total amount of gold expended by the team during the match.
+- goldspent: The total amount of gold expended by the team during the match.
 
--dragons, barons, heralds, elders: These columns indicate the number of each respective neutral objective secured by the team, with each objective providing distinct strategic advantages.
+- dragons, barons, heralds, elders: These columns indicate the number of each respective neutral objective secured by the team, with each objective providing distinct strategic advantages.
 
 
 <iframe
