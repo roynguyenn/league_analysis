@@ -11,6 +11,8 @@ This leads us into the central question we'll be investigating: "how well do the
 ### Dataset Introduction
 In our project, we are going to be working with Oracle Elixir's League of Legends professional match's history throughout 2022. This datatset consists of 150,588 rows alongside 161 columns. Of those columns, some of them are important metrics defining the key gameplay variables recorded from each match that would help go more in depth in answering our question and predictive analysis.
 
+- gameid: A unique identifier for every profession match played in 2022.
+
 - firsttower: A binary flag indicating whether the team secured the first tower of the match (1 if they did, 0 if not).
 
 - goldat10: The total gold a team has accumulated by the 10-minute mark.
