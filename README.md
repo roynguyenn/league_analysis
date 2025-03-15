@@ -121,6 +121,9 @@ This is the aggregate statistics of the same teams that didn't get first tower
 | 0.0        | T1                  | 322.77 | 1.77      | 3.03        | 2.38       |
 | 0.0        | Team Liquid Academy | 320.20 | 1.49      | 2.43        | 2.09       |
 
-
+| Syntax | Description |
+| --- | ----------- |
+| Header | Title |
+| Paragraph | Text |
 
 
