@@ -124,4 +124,38 @@ Here, I grouped by the firsttower and teamname, then I got its mean aggregate fo
 
 In our dataset, I believe that columns that are NMAR (Not Missing at Random) would be doublekills', 'triplekills', 'quadrakills', 'pentakills'. Reason why I think this is the case is because it depends on whether or not the actual player gets those type of kills consecutively. Support role players usually wouldn't get anything higher than a triplekill, making it so these values appear as missing is because the player can't even get those type of kills to begin with. An extra column we might add to make this MAR, is a 'had_killstreak' column, where it's a binary indicator of whether or not the player had 2 or more kills in a row in a match. 1 indicating that they did, 0 if not. 
 
+### Missingness Dependency
+
+Here, we're going to see whether or not missing values in 'firsttower' is dependent on other columns. The other two columns we'll be using are 
+'gamelength' and 'side'.
+
+I'm going to perform a permutation test on firsttower missingness and gamelength.
+
+**Null Hypothesis**: distribution of 'gamelength' is the same when 'firsttower' is missing and when 'firsttower' is not missing.
+**Alternative Hypothesis**: distribution of 'gamelength' is **NOT** the same when 'firsttower' is missing and when 'firsttower' is not missing.
+
+Here is the distribution of our test statistic (absolute difference in means)
+<iframe
+  src="assets/missingness_gamelength.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+Here, I found out that the observed test statistic is 47.24143596845647, with a p-value of 0.0, meaning that we REJECT the null hypothesis in favor of the alternative since it is below our minimum threshhold of 0.05 (we use standard alpha = 0.05 here). So 'firsttower' missingness is dependent on the gamelength column.
+
+Another permutation test I performed was on 'firsttower' missingness and 'side'.
+
+**Null Hypothesis**: distribution of 'side' is the same when 'firsttower' is missing and when 'firsttower' is not missing.
+**Alternative Hypothesis**: distribution of 'side' is **NOT** the same when 'firsttower' is missing and when 'firsttower' is not missing.
+
+Heres the distribution of our test statistic in this test (Total Variation Distance)
+<iframe
+  src="assets/missingness_side.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+Here, the observed test statistic (TVD) is 0.0, with a p-value of 1. This means that we accept the null and we can confidently say that the missingness of 'firsttower' does not depend on 'side' column. 
+
+## Hypothesis Testing
 
