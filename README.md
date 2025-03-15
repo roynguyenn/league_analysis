@@ -38,9 +38,10 @@ In our project, we are going to be working with Oracle Elixir's League of Legend
 - `dragons, barons, heralds, elders`: These columns indicate the number of each respective neutral objective secured by the team, with each objective providing distinct strategic advantages.
 
 ## Data Cleaning and Exploratory Data Analysis
-For this part, we'll be keeping the relevant columns to help explore our question more in depth. We'll be keeping the columns: 'firsttower', 'goldat10', 'side', 'gamelength', 'xpat10', 'csat10', 'killsat10', 'assistsat10', 'deathsat10'. The dataset is organized so that in each match, there are 5 rows each representing a player in a team then a row that represents the team aggregate of the data. Since there are 2 teams, we'll have 12 rows in total for each match. For this part, we'll only be needing all of the team aggregate rows which will be used in our analysis here. 
+For this part, we'll be keeping the relevant columns to help explore our question more in depth. We'll be keeping the columns: 'firsttower', 'goldat10', 'side', 'gamelength', 'xpat10', 'csat10', 'killsat10', 'assistsat10', 'deathsat10'. The dataset is organized so that in each match, there are 5 rows each representing a player in a team then a row that represents the team aggregate of the data. Since there are 2 teams, we'll have 12 rows in total for each match. For this part, we'll only be needing all of the team aggregate rows which will be used in our analysis here. Reason why we are using "at10" columns is because first tower usually gets taken after 10 minutes (although I acknowledege there are instances where this is not the case, however those are outliers)
 
 Here is the top 5 rows of our cleaned dataset:
+
 | firsttower | side | gamelength | csat10 | killsat10 | deathsat10 |
 |------------|------|------------|--------|-----------|------------|
 | 1.0        | Blue | 1713       | 322.0  | 3.0       | 0.0        |
@@ -121,9 +122,8 @@ This is the aggregate statistics of the same teams that didn't get first tower
 | 0.0        | T1                  | 322.77 | 1.77      | 3.03        | 2.38       |
 | 0.0        | Team Liquid Academy | 320.20 | 1.49      | 2.43        | 2.09       |
 
-| Syntax | Description |
-| --- | ----------- |
-| Header | Title |
-| Paragraph | Text |
+Here, I grouped by the firsttower and teamname, then I got its mean aggregate for each team within each first tower categorization. Comparing the two, we see that the same teams that got first tower actually had higher killsat10, assistsat10, and lower deathsat10. Indicating domination of the early game which could lead to first tower being taken.
+
+
 
 
