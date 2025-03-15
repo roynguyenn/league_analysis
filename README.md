@@ -51,7 +51,7 @@ Here is the top 5 rows of our cleaned dataset:
 
 (This dataframe will also be used for our missingness and hypothesis test)
 
-## Univariate Analysis
+### Univariate Analysis
 Distribution of single columns
 
 Below is distribution of kills at 10 between all teams
@@ -74,7 +74,7 @@ Here, we also plotted the distribution of cs (minion kills) at 10 minutes across
 
 The distribution here shows us that it is approximately normal. This tells us that within the early game, majority of teams will get around 320 minion kills which will stay consistent and useful for analyzing team behavior in the early game.
 
-## Bivariate Analysis
+### Bivariate Analysis
 
 Here, I created a bivariate graph, demonstrating the relationship between the amount of kills to cs in the early game.
 
@@ -98,7 +98,7 @@ Another bivariate plot I've created is the distribution of cs kills at 10 minute
 
 In this plot, we see a slight shift in the distribution, where teams that did get first tower had the distribution shifted to the right. Indicating that teams that gets the first tower on average would have a higher minion kill score by 10 minutes. (we'll see later on that this can also visualize our hypothesis test)
 
-## Aggregate Comparison Amongst Teams
+### Aggregate Comparison Amongst Teams
 Here, I've aggregated data using the mean of popular team matches, comparing them side by side where they did get first tower to matches where they didn't.
 
 This is the aggregate statistics of teams where they did get first tower                 
