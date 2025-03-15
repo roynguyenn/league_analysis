@@ -2,3 +2,7 @@
   max-width: 1600px !important;
   margin: 0 auto;
 }
+iframe {
+  display: block;
+  margin-bottom: 0 !important;
+}
