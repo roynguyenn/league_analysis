@@ -62,7 +62,6 @@ Below is distribution of kills at 10 between all teams
   height="600"
   frameborder="0"
 ></iframe>
-
 The histogram shows us that most teams have relatively few kills near the start of the game, with the distribution being heavily skewed to the right. Majority of teams will have between 0-5 kills with a small fraction having more than that, and its unimodal with peak at 1 kill.
 
 Here, we also plotted the distribution of cs (minion kills) at 10 minutes across all teams
@@ -72,7 +71,6 @@ Here, we also plotted the distribution of cs (minion kills) at 10 minutes across
   height="600"
   frameborder="0"
 ></iframe>
-
 The distribution here shows us that it is approximately normal. This tells us that within the early game, majority of teams will get around 320 minion kills which will stay consistent and useful for analyzing team behavior in the early game.
 
 ### Bivariate Analysis
@@ -85,7 +83,6 @@ Here, I created a bivariate graph, demonstrating the relationship between the am
   height="600"
   frameborder="0"
 ></iframe>
-
 This scatterplot reveals the slightly negative correlation it has between kills and cs at 10 minutes. This suggests that when teams are more focused on slaying enemy champions, they are sacrificing minion kills.
 
 Another bivariate plot I've created is the distribution of cs kills at 10 minutes between teams who got first tower and didn't.
@@ -96,7 +93,6 @@ Another bivariate plot I've created is the distribution of cs kills at 10 minute
   height="600"
   frameborder="0"
 ></iframe>
-
 In this plot, we see a slight shift in the distribution, where teams that did get first tower had the distribution shifted to the right. Indicating that teams that gets the first tower on average would have a higher minion kill score by 10 minutes. (we'll see later on that this can also visualize our hypothesis test)
 
 ### Aggregate Comparison Amongst Teams
