@@ -100,15 +100,23 @@ In this plot, we see a slight shift in the distribution, where teams that did ge
 ## Aggregate Comparison Amongst Teams
 Here, I've aggregated data using the mean of popular teams, comparing them side by side with matches where they did get first tower to matches where they didn't.
 
-This is the aggregate statistics of teams where they did get first tower                 Here, is the aggregate statistics of teams where they did not get first tower
-| firsttower | teamname              | csat10  | killsat10 | assistsat10 | deathsat10 | | firsttower | teamname              | csat10  | killsat10 | assistsat10 | deathsat10 |
-|------------|-----------------------|---------|-----------|-------------|------------| |------------|-----------------------|---------|-----------|-------------|------------|
-| 1.0        | DRX                   | 331.06  | 1.70      | 3.08        | 1.49       | | 0.0        | DRX                   | 324.87  | 1.22      | 1.97        | 1.97       |
-| 1.0        | Dplus KIA             | 327.27  | 1.82      | 3.04        | 1.26       | | 0.0        | Dplus KIA             | 329.82  | 1.30      | 2.07        | 1.64       |
-| 1.0        | Evil Geniuses         | 324.90  | 2.35      | 3.58        | 1.42       | | 0.0        | Dplus KIA             | 329.82  | 1.30      | 2.07        | 1.64       |
-| 1.0        | T1                    | 335.03  | 2.15      | 3.33        | 1.69       | | 0.0        | T1                    | 322.77  | 1.77      | 3.03        | 2.38       |
-| 1.0        | Team Liquid Academy   | 323.03  | 2.41      | 3.40        | 1.72       | | 0.0        | Team Liquid Academy   | 320.20  | 1.49      | 2.43        | 2.09       |
+This is the aggregate statistics of teams where they did get first tower                 
+| firsttower | teamname              | csat10  | killsat10 | assistsat10 | deathsat10 |
+|------------|-----------------------|---------|-----------|-------------|------------|
+| 1.0        | DRX                   | 331.06  | 1.70      | 3.08        | 1.49       |
+| 1.0        | Dplus KIA             | 327.27  | 1.82      | 3.04        | 1.26       |
+| 1.0        | Evil Geniuses         | 324.90  | 2.35      | 3.58        | 1.42       |
+| 1.0        | T1                    | 335.03  | 2.15      | 3.33        | 1.69       | 
+| 1.0        | Team Liquid Academy   | 323.03  | 2.41      | 3.40        | 1.72       | 
 
+This is the aggregate statistics of the same teams that didn't get first tower
+| firsttower | teamname              | csat10  | killsat10 | assistsat10 | deathsat10 |
+|------------|-----------------------|---------|-----------|-------------|------------|
+| 0.0        | DRX                   | 324.87  | 1.22      | 1.97        | 1.97       |
+| 0.0        | Dplus KIA             | 329.82  | 1.30      | 2.07        | 1.64       |
+| 0.0        | Evil Geniuses         | 318.04  | 1.50      | 2.19        | 2.08       |
+| 0.0        | T1                    | 322.77  | 1.77      | 3.03        | 2.38       |
+| 0.0        | Team Liquid Academy   | 320.20  | 1.49      | 2.43        | 2.09       |
 
 
 
