@@ -58,23 +58,27 @@ Here is the top 5 rows of our cleaned dataset:
 Distribution of single columns
 
 Below is distribution of kills at 10 between all teams
-<iframe
-  src="assets/distribution_killsat10.html"
-  width="800"
-  height="600"
-  frameborder="0"
-  style="display:block; margin-bottom:0;"
-></iframe>
+<div style="margin-bottom:0;">
+  <iframe
+    src="assets/distribution_killsat10.html"
+    width="800"
+    height="600"
+    frameborder="0"
+    style="display:block; margin-bottom:0;"
+  ></iframe>
+</div>
 The histogram shows us that most teams have relatively few kills near the start of the game, with the distribution being heavily skewed to the right. Majority of teams will have between 0-5 kills with a small fraction having more than that, and its unimodal with peak at 1 kill.
 
 Here, we also plotted the distribution of cs (minion kills) at 10 minutes across all teams
-<iframe
-  src="assets/distribution_csat10_new.html"
-  width="800"
-  height="600"
-  frameborder="0"
-  style="display:block; margin-bottom:0;"
-></iframe>
+<div style="margin-bottom:0;">
+  <iframe
+    src="assets/distribution_csat10_new.html"
+    width="800"
+    height="600"
+    frameborder="0"
+    style="display:block; margin-bottom:0;"
+  ></iframe>
+</div>
 The distribution here shows us that it is approximately normal. This tells us that within the early game, majority of teams will get around 320 minion kills which will stay consistent and useful for analyzing team behavior in the early game.
 
 ### Bivariate Analysis
