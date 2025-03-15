@@ -1,4 +1,4 @@
-# League of Legends first tower Analysis
+# League of Legends First Tower Analysis
 League of Legends Tower Analysis is an extensive data science study carried out at UCSD. The project navigates through several stages—from initial exploratory data analysis and statistical testing, to developing baseline predictive models and assessing fairness. Its main aim is to uncover how towers in League of Legends relate to crucial in-game metrics and overall match results.
 
 by: Royce Nguyen (ron005@ucsd.edu)
