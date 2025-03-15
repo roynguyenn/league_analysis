@@ -48,6 +48,7 @@ Here is the top 5 rows of our cleaned dataset:
 | 1.0        | Blue | 1972       | 368.0  | 0.0       | 1.0        |
 | 1.0        | Blue | 2488       | 297.0  | 4.0       | 2.0        |
 | 1.0        | Blue | 2020       | 331.0  | 0.0       | 2.0        |
+
 (This dataframe will also be used for our missingness and hypothesis test)
 
 ## Univariate Analysis
