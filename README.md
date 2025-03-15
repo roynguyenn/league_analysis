@@ -102,12 +102,12 @@ Another bivariate plot I've created is the distribution of cs kills at 10 minute
   frameborder="0"
   style="display:block; margin-bottom:0;"
 ></iframe>
-In this plot, we see a slight shift in the distribution, where teams that did get first tower had the distribution shifted to the right. Indicating that teams that gets the first tower on average would have a higher minion kill score by 10 minutes. (we'll see later on that this can also visualize our hypothesis test)
+In this plot, we see a slight shift in the distribution, where teams that did get first tower had the distribution shifted to the right. This indicates that teams that get first tower on average would have a higher minion kill score by 10 minutes. (We will see later on that this can also visualize our hypothesis test)
 
 ### Aggregate Comparison Amongst Teams
 Here, I've aggregated data using the mean of popular team matches, comparing them side by side where they did get first tower to matches where they didn't.
 
-This is the aggregate statistics of teams where they did get first tower
+This is the aggregate statistics of teams where they did get first tower.
 
 | firsttower | teamname              | csat10  | killsat10 | assistsat10 | deathsat10 |
 |------------|-----------------------|---------|-----------|-------------|------------|
@@ -117,7 +117,7 @@ This is the aggregate statistics of teams where they did get first tower
 | 1.0        | T1                    | 335.03  | 2.15      | 3.33        | 1.69       | 
 | 1.0        | Team Liquid Academy   | 323.03  | 2.41      | 3.40        | 1.72       | 
 
-This is the aggregate statistics of the same teams that didn't get first tower
+This is the aggregate statistics of the same teams that didn't get first tower.
 
 | firsttower | teamname            | csat10 | killsat10 | assistsat10 | deathsat10 |
 |------------|---------------------|--------|-----------|-------------|------------|
