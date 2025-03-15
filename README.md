@@ -134,7 +134,12 @@ Here, we're going to see whether or not missing values in 'firsttower' is depend
 I'm going to perform a permutation test on firsttower missingness and gamelength.
 
 **Null Hypothesis**: distribution of 'gamelength' is the same when 'firsttower' is missing and when 'firsttower' is not missing.
+
 **Alternative Hypothesis**: distribution of 'gamelength' is **NOT** the same when 'firsttower' is missing and when 'firsttower' is not missing.
+
+**Test Statistic**: Absolute Difference in Means
+
+**Significance Level**: Alpha = 0.05
 
 Here is the distribution of our test statistic (absolute difference in means)
 <iframe
@@ -148,7 +153,12 @@ Here, I found out that the observed test statistic is 47.24143596845647, with a 
 Another permutation test I performed was on 'firsttower' missingness and 'side'.
 
 **Null Hypothesis**: distribution of 'side' is the same when 'firsttower' is missing and when 'firsttower' is not missing.
+
 **Alternative Hypothesis**: distribution of 'side' is **NOT** the same when 'firsttower' is missing and when 'firsttower' is not missing.
+
+**Test Statistic**: Total Variation Distance (TVD)
+
+**Significance Level**: Alpha = 0.05
 
 Heres the distribution of our test statistic in this test (Total Variation Distance)
 <iframe
@@ -160,4 +170,71 @@ Heres the distribution of our test statistic in this test (Total Variation Dista
 Here, the observed test statistic (TVD) is 0.0, with a p-value of 1. This means that we accept the null and we can confidently say that the missingness of 'firsttower' does not depend on 'side' column. 
 
 ## Hypothesis Testing
+
+In this hypothesis test, we're going to see whether or not there is a significant difference in the distributions of 'csat10' between teams that did get the first tower and the teams that didn't. Tying back to the bivariate graph we made earlier, I'm going to answer "are those two distributions that different?". The result of this test will help define whether or not to prioritize 
+
+**Null Hypothesis**: The distribution of minion kills at 10 minutes for teams that got first tower is the same as the distribution of minion kills with teams that didn't get first tower.
+
+**Alternative Hypothesis**: The distribution of minion kills at 10 minutes for teams that secured the first tower is not the same compared to teams that did not secure the first tower.
+
+**Test Statistic**: Absolute Difference in Means
+
+**Significance Level**: Alpha = 0.05
+
+Below is the distribution of our test statistic:
+<iframe
+  src="assets/hypothesis_test.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+Our observed test statistic was 9.197072072072046, with a p-value of 0.0. This means we reject our null in favor of the alternative. This signifies that there is a significant difference in the distributions of teams getting first tower and the minion kills at 10 minutes. This tells us that teams with higher CS at 10 minutes are significantly more likely to secure the first tower. Ultimately, these advantages contribute to the ability to destroy towers earlier, setting the stage for overall match dominance, as getting first tower gives a strategic advantage.
+
+## Framing a Prediction Problem
+Previously, we examined and analyzed the early metrics that might contribute to getting the first tower. However, what if we scale metrics from the early game to see whether or not we're able to predict the amount of towers a team gets using metrics from the entirety of the length of the matches. 
+
+That leads us to the question of: **"are we able to predict the amount of towers a team takes at the end of their match?"**. To answer this question, we would first need to determine the model we're working with. In this case it would be a regression type model, since we're trying to predict a numerical column 'towers'. 
+
+Here, our response variable is 'towers',and the metric we'll be using to test our model would be R^2 score. Reason being is because it quantifies the proportion of variance between 'towers' that is explained by our independent variables (its predictors).
+
+Since we are trying to predict the amount of towers a team gets by the end of the match, we're able to work with aggregated data that gets calculated throughout the length of the game. Here, we'll be able to use 'teamkills', 'deaths','minionkills','goldspent', 'monsterkills', 'barons','heralds', 'visionscore', 'vspm', 'killsat10','assistsat10','deathsat10'. I'll be splitting the data so im training the model on 80% of the data, and testing on 20% so our model is able to capture the robust patterns within our dataset.
+
+## Baseline Model
+The baseline model I used is a Random Forest Regressor, with the following features : 'teamkills',  'deaths', 'minionkills',  'goldspent'. All four of these features are numerical quantitative. I then applied a standard scalar across the features in the model because it is within the nature of each feature that the values are going to be very different from each other. Since usually goldspent are in the tens of thousands, while teamkills are in the double digits. 
+
+After I fit the baseline model, we see a r^2 score between the training data to be 0.9755, whereas the r^2 score of our test data is lower at 0.8177. This means that our baseline model is overfitting to the training data and currently is not a good model due to this. However, the r^2 score still isn't bad per say, the model still might not perform as well on unseen data. This suggests that we should include some tuning on hyperparameters or feature engineer to improve its robustness.
+
+## Final Model
+In my final model, I decided to add 'monsterkills', 'barons', 'heralds', and also two more features that got engineered: 'visionproduct' and 'kda'. The reason why I decided to add 'monsterkills' is because the jungler has the potential to "gank" (help a teammate attack the enemy while they're in the lane) enemies. The main role of the jungler is to also prioritize getting monster kills and higher monster kills indicates a better jungle, which would in turn help out teammates get towers in their lane. I also added 'baron' and 'heralds' because they both are important key neutral objects which provide an advantage to the game by giving the team a buff. Heralds are specifically designed to attack enemy turrets if slain. Reason why I engineered two more features, 'vision product' is because having good vision on the map is also an indicator of good team dynamics, allowing the team to see more of where the enemy are and act accordingly in response. I also created 'kda' which gets the kill-death-assist ratio in the early game, since a team having a lead in the early game metrics sets the stage up for the team to progress to the enemy base.
+
+The final model I chose is still a Random Forest Regressor from the baseline model. All of the newly added features were quantitative, so I would use StandardScalar to transform them. The hyperparameters I decided to tune for this model is "max_depth" and "n_estimator". Here, I tested out max_depth from 8 to 13, with steps 1 in between. I also tested n_estimators of 50,100, and 150. Using GridSearchCV, we found out that the best max_depth was 10, and n_estimators of 100.
+
+After tuning our hyperparameters and added newly engineered features, we were able to see an r^2 score of 0.9032 for our training data and 0.8587 for our testing data. This is an improvement because of we see that the r^2 score of the training data is less than the baseline's training r^2, meaning that it fitted the training model less, however the r^2 score for our testing data improved (roughly 0.05 improvement). This indicates that the model is less overfitting to our training data and is more robust to unseen data.
+
+## Fairness Analysis
+In this section, we're going to test if our model performs fairly across different groups. We're going to investigate if we answer the question of: "does my model perform worse for teams that has 500 minion kills or higher than it does for teams that got less than 500 minion kills?”. 
+
+We're going to be performing a permutation test where our group x are teams that got more than or equal to 500 minion kills in their respective match, and group y are the teams that got less than 500 minion kills.
+
+**Null Hypothesis**: the r^2 score of the teams that have 500 minion kills or greater is the same as those who have less than 500 minion kills. Meaning the model is fair.
+
+**Alternative Hypothesis**: The r^2 score of teams that have less than 500 minion kills is NOT the same as the teams who have greater than or equal to 500 minion kills.
+
+**Test Statistic**: Difference of r^2 score between teams that meet the 500 minion kill threshhold
+
+**Significance Level**: Alpha = 0.05
+
+Here is the distribution of our test statistic
+<iframe
+  src="assets/fairness_analysis.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+The results of our permutation test gives us a p-value of 0.517, with an observed test statistic of -0.0265. Since our p-value is greater than our significance level, we accept the null which suggests that our model does perform fairly across these two groups. There is no statistical significance that indicates that our model would perform differently between the two groups.
+
+
+
+
+
 
