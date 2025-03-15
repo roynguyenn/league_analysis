@@ -63,6 +63,7 @@ Below is distribution of kills at 10 between all teams
   width="800"
   height="600"
   frameborder="0"
+  style="display:block; margin-bottom:0;"
 ></iframe>
 The histogram shows us that most teams have relatively few kills near the start of the game, with the distribution being heavily skewed to the right. Majority of teams will have between 0-5 kills with a small fraction having more than that, and its unimodal with peak at 1 kill.
 
@@ -72,6 +73,7 @@ Here, we also plotted the distribution of cs (minion kills) at 10 minutes across
   width="800"
   height="600"
   frameborder="0"
+  style="display:block; margin-bottom:0;"
 ></iframe>
 The distribution here shows us that it is approximately normal. This tells us that within the early game, majority of teams will get around 320 minion kills which will stay consistent and useful for analyzing team behavior in the early game.
 
@@ -83,6 +85,7 @@ Here, I created a bivariate graph, demonstrating the relationship between the am
   width="800"
   height="600"
   frameborder="0"
+  style="display:block; margin-bottom:0;"
 ></iframe>
 This scatterplot reveals the slightly negative correlation it has between kills and cs at 10 minutes. This suggests that when teams are more focused on slaying enemy champions, they are sacrificing minion kills.
 
@@ -92,6 +95,7 @@ Another bivariate plot I've created is the distribution of cs kills at 10 minute
   width="800"
   height="600"
   frameborder="0"
+  style="display:block; margin-bottom:0;"
 ></iframe>
 In this plot, we see a slight shift in the distribution, where teams that did get first tower had the distribution shifted to the right. Indicating that teams that gets the first tower on average would have a higher minion kill score by 10 minutes. (we'll see later on that this can also visualize our hypothesis test)
 
@@ -147,6 +151,7 @@ Here is the distribution of our test statistic (absolute difference in means)
   width="800"
   height="600"
   frameborder="0"
+  style="display:block; margin-bottom:0;"
 ></iframe>
 Here, I found out that the observed test statistic is 47.24143596845647, with a p-value of 0.0, meaning that we REJECT the null hypothesis in favor of the alternative since it is below our minimum threshhold of 0.05 (we use standard alpha = 0.05 here). So 'firsttower' missingness is dependent on the gamelength column.
 
@@ -166,6 +171,7 @@ Heres the distribution of our test statistic in this test (Total Variation Dista
   width="800"
   height="600"
   frameborder="0"
+  style="display:block; margin-bottom:0;"
 ></iframe>
 Here, the observed test statistic (TVD) is 0.0, with a p-value of 1. This means that we accept the null and we can confidently say that the missingness of 'firsttower' does not depend on 'side' column. 
 
@@ -187,6 +193,7 @@ Below is the distribution of our test statistic:
   width="800"
   height="600"
   frameborder="0"
+  style="display:block; margin-bottom:0;"
 ></iframe>
 Our observed test statistic was 9.197072072072046, with a p-value of 0.0. This means we reject our null in favor of the alternative. This signifies that there is a significant difference in the distributions of teams getting first tower and the minion kills at 10 minutes. This tells us that teams with higher CS at 10 minutes are significantly more likely to secure the first tower. Ultimately, these advantages contribute to the ability to destroy towers earlier, setting the stage for overall match dominance, as getting first tower gives a strategic advantage.
 
@@ -230,6 +237,7 @@ Here is the distribution of our test statistic
   width="800"
   height="600"
   frameborder="0"
+  style="display:block; margin-bottom:0;"
 ></iframe>
 The results of our permutation test gives us a p-value of 0.517, with an observed test statistic of -0.0265. Since our p-value is greater than our significance level, we accept the null which suggests that our model does perform fairly across these two groups. There is no statistical significance that indicates that our model would perform differently between the two groups.
 
