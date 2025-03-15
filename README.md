@@ -66,7 +66,7 @@ The histogram shows us that most teams have relatively few kills near the start 
 
 Here, we also plotted the distribution of cs (minion kills) at 10 minutes across all teams
 <iframe
-  src="assets/distribution_csat10.html"
+  src="assets/distribution_csat10_new.html"
   width="800"
   height="600"
   frameborder="0"
@@ -101,7 +101,8 @@ In this plot, we see a slight shift in the distribution, where teams that did ge
 ### Aggregate Comparison Amongst Teams
 Here, I've aggregated data using the mean of popular team matches, comparing them side by side where they did get first tower to matches where they didn't.
 
-This is the aggregate statistics of teams where they did get first tower                 
+This is the aggregate statistics of teams where they did get first tower
+
 | firsttower | teamname              | csat10  | killsat10 | assistsat10 | deathsat10 |
 |------------|-----------------------|---------|-----------|-------------|------------|
 | 1.0        | DRX                   | 331.06  | 1.70      | 3.08        | 1.49       |
@@ -111,13 +112,15 @@ This is the aggregate statistics of teams where they did get first tower
 | 1.0        | Team Liquid Academy   | 323.03  | 2.41      | 3.40        | 1.72       | 
 
 This is the aggregate statistics of the same teams that didn't get first tower
-| firsttower | teamname              | csat10  | killsat10 | assistsat10 | deathsat10 |
-|------------|-----------------------|---------|-----------|-------------|------------|
-| 0.0        | DRX                   | 324.87  | 1.22      | 1.97        | 1.97       |
-| 0.0        | Dplus KIA             | 329.82  | 1.30      | 2.07        | 1.64       |
-| 0.0        | Evil Geniuses         | 318.04  | 1.50      | 2.19        | 2.08       |
-| 0.0        | T1                    | 322.77  | 1.77      | 3.03        | 2.38       |
-| 0.0        | Team Liquid Academy   | 320.20  | 1.49      | 2.43        | 2.09       |
+
+| firsttower | teamname            | csat10 | killsat10 | assistsat10 | deathsat10 |
+|------------|---------------------|--------|-----------|-------------|------------|
+| 0.0        | DRX                 | 324.87 | 1.22      | 1.97        | 1.97       |
+| 0.0        | Dplus KIA           | 329.82 | 1.30      | 2.07        | 1.64       |
+| 0.0        | Evil Geniuses       | 318.04 | 1.50      | 2.19        | 2.08       |
+| 0.0        | T1                  | 322.77 | 1.77      | 3.03        | 2.38       |
+| 0.0        | Team Liquid Academy | 320.20 | 1.49      | 2.43        | 2.09       |
+
 
 
 
