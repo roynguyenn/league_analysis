@@ -58,13 +58,13 @@ Here is the top 5 rows of our cleaned dataset:
 Distribution of single columns
 
 Below is distribution of kills at 10 between all teams
-<div style="margin-bottom:0;">
+<div style="margin: 0; padding: 0; background: none;">
   <iframe
     src="assets/distribution_killsat10.html"
     width="800"
     height="600"
     frameborder="0"
-    style="display:block; margin-bottom:0;"
+    style="display:block; margin:0 auto;"
   ></iframe>
 </div>
 The histogram shows us that most teams have relatively few kills near the start of the game, with the distribution being heavily skewed to the right. Majority of teams will have between 0-5 kills with a small fraction having more than that, and its unimodal with peak at 1 kill.
