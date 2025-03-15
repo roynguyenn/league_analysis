@@ -76,7 +76,6 @@ The distribution here shows us that it is approximately normal. This tells us th
 ### Bivariate Analysis
 
 Here, I created a bivariate graph, demonstrating the relationship between the amount of kills to cs in the early game.
-
 <iframe
   src="assets/distribution_cs_and_kills.html"
   width="800"
@@ -86,7 +85,6 @@ Here, I created a bivariate graph, demonstrating the relationship between the am
 This scatterplot reveals the slightly negative correlation it has between kills and cs at 10 minutes. This suggests that when teams are more focused on slaying enemy champions, they are sacrificing minion kills.
 
 Another bivariate plot I've created is the distribution of cs kills at 10 minutes between teams who got first tower and didn't.
-
 <iframe
   src="assets/distribution_cs_btwn_towers.html"
   width="800"
@@ -120,6 +118,10 @@ This is the aggregate statistics of the same teams that didn't get first tower
 
 Here, I grouped by the firsttower and teamname, then I got its mean aggregate for each team within each first tower categorization. Comparing the two, we see that the same teams that got first tower actually had higher killsat10, assistsat10, and lower deathsat10. Indicating domination of the early game which could lead to first tower being taken.
 
+## Assessment of Missingness
 
+### NMAR Analysis
+
+In our dataset, I believe that columns that are NMAR (Not Missing at Random) would be doublekills', 'triplekills', 'quadrakills', 'pentakills'. Reason why I think this is the case is because it depends on whether or not the actual player gets those type of kills consecutively. Support role players usually wouldn't get anything higher than a triplekill, making it so these values appear as missing is because the player can't even get those type of kills to begin with. An extra column we might add to make this MAR, is a 'had_killstreak' column, where it's a binary indicator of whether or not the player had 2 or more kills in a row in a match. 1 indicating that they did, 0 if not. 
 
 
